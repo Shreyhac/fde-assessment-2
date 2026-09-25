@@ -1,0 +1,103 @@
+{
+  "project_kpi": "percent of completed orders handed over within 12 minutes",
+  "project_kpi_value_pct": 57.55,
+  "completed_orders": 2205,
+  "average_wait_minutes": 11.44,
+  "average_stage_minutes": {
+    "accept": 1.03,
+    "prepare": 8.74,
+    "handover": 1.66
+  },
+  "cancellation_rate_pct": 3.08,
+  "issue_rate_pct": 8.66,
+  "within_target_pct_by_issue": {
+    "no_issue": 58.78,
+    "with_issue": 44.44
+  },
+  "shift_metrics": [
+    {
+      "shift": "breakfast",
+      "completed_orders": 580,
+      "within_target_pct": 52.24,
+      "avg_wait_minutes": 11.92,
+      "avg_accept_min": 1.08,
+      "avg_prep_min": 9.18,
+      "avg_handover_min": 1.72,
+      "avg_staff_present": 3.71,
+      "orders_per_staff_hour": 11.44
+    },
+    {
+      "shift": "dinner",
+      "completed_orders": 777,
+      "within_target_pct": 56.63,
+      "avg_wait_minutes": 11.43,
+      "avg_accept_min": 1.03,
+      "avg_prep_min": 8.78,
+      "avg_handover_min": 1.65,
+      "avg_staff_present": 3.71,
+      "orders_per_staff_hour": 12.38
+    },
+    {
+      "shift": "lunch",
+      "completed_orders": 848,
+      "within_target_pct": 62.03,
+      "avg_wait_minutes": 11.12,
+      "avg_accept_min": 1.01,
+      "avg_prep_min": 8.47,
+      "avg_handover_min": 1.63,
+      "avg_staff_present": 4.86,
+      "orders_per_staff_hour": 10.29
+    }
+  ],
+  "within_target_by_staffing": {
+    "fully_staffed": {
+      "shift_days": 16,
+      "completed_orders": 1698,
+      "within_target_pct": 59.54
+    },
+    "short_staffed": {
+      "shift_days": 5,
+      "completed_orders": 507,
+      "within_target_pct": 50.89
+    }
+  },
+  "within_target_by_staffing_and_shift": {
+    "breakfast": {
+      "fully_staffed": {
+        "completed_orders": 416,
+        "within_target_pct": 54.81
+      },
+      "short_staffed": {
+        "completed_orders": 164,
+        "within_target_pct": 45.73
+      }
+    },
+    "dinner": {
+      "fully_staffed": {
+        "completed_orders": 553,
+        "within_target_pct": 57.5
+      },
+      "short_staffed": {
+        "completed_orders": 224,
+        "within_target_pct": 54.46
+      }
+    },
+    "lunch": {
+      "fully_staffed": {
+        "completed_orders": 729,
+        "within_target_pct": 63.79
+      },
+      "short_staffed": {
+        "completed_orders": 119,
+        "within_target_pct": 51.26
+      }
+    }
+  },
+  "run": {
+    "run_id": "185046d1",
+    "input_rows": 2283,
+    "orders_csv_sha256": "3b787ac0cd4738c6aa3f3785c08a112ed6bd9d0e5f911c62dbd5e02bc44285e5",
+    "manifest_row_count": 2283,
+    "roster_rows": 21
+  }
+}

@@ -1,0 +1,4 @@
+2026-09-25 01:26:32,909 INFO run 185046d1 started
+2026-09-25 01:26:32,917 INFO Retrieved 2283 CSV rows (sha256 3b787ac0cd47..., matches manifest), JSON config with 3 shifts, and 21 roster rows via SQL
+2026-09-25 01:26:32,935 INFO Accepted 2275 rows; rejected 8; reasons {'exact_duplicate_dropped': 1, 'missing_core_timestamp': 1, 'completed_without_handover': 1, 'timestamp_sequence': 1, 'invalid_shift': 1, 'shift_window_mismatch': 1, 'invalid_cancelled': 1, 'invalid_timestamp': 1}
+2026-09-25 01:26:32,970 INFO run 185046d1 finished; KPI 57.55%

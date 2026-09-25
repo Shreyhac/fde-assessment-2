@@ -1,0 +1,188 @@
+{
+  "run_id": "185046d1",
+  "input_rows": 2283,
+  "orders_csv_sha256": "3b787ac0cd4738c6aa3f3785c08a112ed6bd9d0e5f911c62dbd5e02bc44285e5",
+  "manifest_row_count": 2283,
+  "roster_rows": 21,
+  "accepted_rows": 2275,
+  "rejected_rows": 8,
+  "rejections_by_reason": {
+    "exact_duplicate_dropped": 1,
+    "missing_core_timestamp": 1,
+    "completed_without_handover": 1,
+    "timestamp_sequence": 1,
+    "invalid_shift": 1,
+    "shift_window_mismatch": 1,
+    "invalid_cancelled": 1,
+    "invalid_timestamp": 1
+  },
+  "rejections": [
+    {
+      "line": 2277,
+      "order_id": "ORD-00001",
+      "errors": [
+        "exact_duplicate_dropped"
+      ],
+      "raw": {
+        "order_id": "ORD-00001",
+        "order_ts": "2026-09-07T09:48:17",
+        "accepted_ts": "2026-09-07T09:48:54.684407",
+        "ready_ts": "2026-09-07T09:55:13.479391",
+        "handover_ts": "2026-09-07T09:57:24.033276",
+        "shift": "breakfast",
+        "channel": "counter",
+        "item_count": "4",
+        "cancelled": "false",
+        "issue_code": ""
+      }
+    },
+    {
+      "line": 2278,
+      "order_id": "BAD-MISSING",
+      "errors": [
+        "missing_core_timestamp"
+      ],
+      "raw": {
+        "order_id": "BAD-MISSING",
+        "order_ts": "",
+        "accepted_ts": "",
+        "ready_ts": "",
+        "handover_ts": "",
+        "shift": "breakfast",
+        "channel": "app",
+        "item_count": "4",
+        "cancelled": "false",
+        "issue_code": ""
+      }
+    },
+    {
+      "line": 2279,
+      "order_id": "BAD-NO-HANDOVER",
+      "errors": [
+        "completed_without_handover"
+      ],
+      "raw": {
+        "order_id": "BAD-NO-HANDOVER",
+        "order_ts": "2026-09-07T09:40:20",
+        "accepted_ts": "2026-09-07T09:40:51.470172",
+        "ready_ts": "2026-09-07T09:54:20.732690",
+        "handover_ts": "",
+        "shift": "breakfast",
+        "channel": "app",
+        "item_count": "4",
+        "cancelled": "false",
+        "issue_code": ""
+      }
+    },
+    {
+      "line": 2280,
+      "order_id": "BAD-SEQUENCE",
+      "errors": [
+        "timestamp_sequence"
+      ],
+      "raw": {
+        "order_id": "BAD-SEQUENCE",
+        "order_ts": "2026-09-07T09:40:20",
+        "accepted_ts": "2026-09-07T09:40:51.470172",
+        "ready_ts": "2026-09-07T09:40:20",
+        "handover_ts": "2026-09-07T09:56:06.421305",
+        "shift": "breakfast",
+        "channel": "app",
+        "item_count": "4",
+        "cancelled": "false",
+        "issue_code": ""
+      }
+    },
+    {
+      "line": 2281,
+      "order_id": "BAD-SHIFT",
+      "errors": [
+        "invalid_shift"
+      ],
+      "raw": {
+        "order_id": "BAD-SHIFT",
+        "order_ts": "2026-09-07T09:40:20",
+        "accepted_ts": "2026-09-07T09:40:51.470172",
+        "ready_ts": "2026-09-07T09:54:20.732690",
+        "handover_ts": "2026-09-07T09:56:06.421305",
+        "shift": "brunch",
+        "channel": "app",
+        "item_count": "4",
+        "cancelled": "false",
+        "issue_code": ""
+      }
+    },
+    {
+      "line": 2282,
+      "order_id": "BAD-SHIFT-WINDOW",
+      "errors": [
+        "shift_window_mismatch"
+      ],
+      "raw": {
+        "order_id": "BAD-SHIFT-WINDOW",
+        "order_ts": "2026-09-07T09:40:20",
+        "accepted_ts": "2026-09-07T09:40:51.470172",
+        "ready_ts": "2026-09-07T09:54:20.732690",
+        "handover_ts": "2026-09-07T09:56:06.421305",
+        "shift": "dinner",
+        "channel": "app",
+        "item_count": "4",
+        "cancelled": "false",
+        "issue_code": ""
+      }
+    },
+    {
+      "line": 2283,
+      "order_id": "BAD-FLAG",
+      "errors": [
+        "invalid_cancelled"
+      ],
+      "raw": {
+        "order_id": "BAD-FLAG",
+        "order_ts": "2026-09-07T09:40:20",
+        "accepted_ts": "2026-09-07T09:40:51.470172",
+        "ready_ts": "2026-09-07T09:54:20.732690",
+        "handover_ts": "2026-09-07T09:56:06.421305",
+        "shift": "breakfast",
+        "channel": "app",
+        "item_count": "4",
+        "cancelled": "yes",
+        "issue_code": ""
+      }
+    },
+    {
+      "line": 2284,
+      "order_id": "BAD-TIMESTAMP",
+      "errors": [
+        "invalid_timestamp"
+      ],
+      "raw": {
+        "order_id": "BAD-TIMESTAMP",
+        "order_ts": "2026-09-07T09:40:20",
+        "accepted_ts": "07/09/2026 09:41",
+        "ready_ts": "2026-09-07T09:54:20.732690",
+        "handover_ts": "2026-09-07T09:56:06.421305",
+        "shift": "breakfast",
+        "channel": "app",
+        "item_count": "4",
+        "cancelled": "false",
+        "issue_code": ""
+      }
+    }
+  ],
+  "checks": [
+    "required columns present (run stops)",
+    "row count and sha256 match manifest (run stops)",
+    "order_id present and unique",
+    "core timestamps present and parseable",
+    "completed orders have handover; cancelled orders do not",
+    "chronological milestones",
+    "shift exists in config",
+    "order time falls inside shift window",
+    "channel / cancelled / issue_code in allowed values",
+    "item_count positive integer",
+    "roster retrieved by SQL for the manifest period; row count matches manifest (run stops)",
+    "roster covers every day/shift; 0 < staff_present <= staff_scheduled (run stops)",
+    "every order's day/shift has a roster slot"
+  ]
+}

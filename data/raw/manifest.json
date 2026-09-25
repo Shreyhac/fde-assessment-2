@@ -1,0 +1,14 @@
+{
+  "orders_csv": {
+    "row_count": 2283,
+    "sha256": "3b787ac0cd4738c6aa3f3785c08a112ed6bd9d0e5f911c62dbd5e02bc44285e5",
+    "period_start": "2026-09-07",
+    "period_end": "2026-09-13"
+  },
+  "staff_roster_db": {
+    "table": "staff_roster",
+    "row_count": 21,
+    "period_start": "2026-09-07",
+    "period_end": "2026-09-13"
+  }
+}

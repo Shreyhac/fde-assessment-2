@@ -1,0 +1,11 @@
+# Source map
+
+| Business question | Required information | Source / owner | Grain and key | Retrieval | Completeness evidence | Gap |
+|---|---|---|---|---|---|---|
+| Are orders handed over within 12 minutes? | placed and handover timestamps; target | order events / operations; config / manager | one order, `order_id`; one shift, `shift` | CSV + JSON | row count + SHA-256 checked against `manifest.json`; header checked before any row | real target needs confirmation |
+| Where does delay accumulate? | accepted, ready, handover timestamps | order workflow system / operations | event timestamps on each order | CSV | chronology rule and non-null core milestone checks | queue length is absent |
+| Which shift needs intervention? | shift on order, capacity config, staff present per day/shift | event system + manager config + rostering system | `order.shift -> config.shifts[shift]`; (`order_date`, `shift`) -> `staff_roster` | CSV + JSON + SQL query | valid-shift check; roster row count vs manifest; every day has every shift; 0 < present <= scheduled | mid-shift changes absent |
+| Does short staffing hurt service? | staff scheduled vs present; within-target flag | rostering system / HR + event system | one row per (`roster_date`, `shift`) | SQL query on `staff_roster.db` | same roster checks; every order must match a roster slot | real absence reasons unknown |
+| Are exceptions linked to poorer service? | issue code, cancellation, wait | event system / operations | one order | CSV | allowed values checked for `channel`, `cancelled`, `issue_code`; rejects logged | issue-code consistency unknown |
+
+The synthetic generator uses seed `10252` and emits seven days across breakfast, lunch and dinner. Retrieval completeness is checked against `manifest.json`: expected row count and SHA-256 for the order export, and expected row count and period for the roster, which is queried with a parameterised read-only SQL statement. The pipeline also checks the CSV header before reading any row, checks that every day has every shift in the roster, and reports explicit quarantine counts. In a real deployment, these checks would be joined by source extracts' expected date range, daily volume bounds and freshness alerts.
