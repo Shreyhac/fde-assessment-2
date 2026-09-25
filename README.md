@@ -2,6 +2,8 @@
 
 Submitted by: Shreyansh Arora, 24bcs10252, shreyansh.24bcs10252@sst.scaler.com
 
+Submission PDF: https://drive.google.com/file/d/1lQvcbKXtEUBzrc9psHjtzt_9ZpJw_MJf/view?usp=drivesdk
+
 An FDE Data Foundations project (Track C). It takes fragmented cafeteria order events, shift configuration and a staff roster database and turns them into a validated, repeatable service-time KPI. All data is synthetic and fixed-seed (seed `10252`), so the whole path is reproducible without exposing student data.
 
 ## Problem
